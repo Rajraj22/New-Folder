@@ -1,0 +1,25 @@
+CREATE TABLE sales_genre
+
+(
+Genre  string, 
+Global_Sales  float, 
+Critic_Score  int,
+);
+
+INSERT OVERWRITE TABLE sales_genre
+SELECT Genre, Global_Sales, Critic_Score, 
+FROM Sales;
+
+SELECT ROUND(Global_Sales, 2) AS Rounded_Global_Sales
+FROM sales_genre;
+
+
+SELECT *
+FROM sales_genre
+WHERE Critic_Score > 0;
+
+SELECT *
+FROM Your_Table_Name
+WHERE Critic_Score > 0
+ORDER BY Critic_Score DESC;
+
